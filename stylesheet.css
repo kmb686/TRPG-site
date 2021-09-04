@@ -1,0 +1,226 @@
+ul {
+  list-style: none;
+}
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: white;
+}
+
+a:active {
+  color: red;
+}
+
+body {
+  margin: 0 auto;
+  width: 1000px;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+.header-wrapper {
+  margin: 0 auto;
+  padding: 5px;
+  width: 800px;
+}
+
+.header-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 200px;
+  background-color: #fff;
+}
+
+.header-message {
+  letter-spacing: 5px;
+}
+
+span.conscious {
+  font-size: 60px;
+  animation: blur 9s infinite;
+  position: relative;
+  margin-right: 20px;
+}
+
+/* 「測定不能」 */
+span.conscious b {
+  font-size: 60px;
+  font-family: impact;
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  left: 80px;
+}
+
+@keyframes blur {
+  /*opacityとtext-shadow+animationでフェードインを表現する*/
+  0% {
+    text-shadow: 0 0 100px #fff;
+    opacity: 0;
+  }
+  5% {
+    text-shadow: 0 0 90px #fff;
+  }
+  15% {
+    opacity: 1;
+  }
+  20% {
+    text-shadow: 0 0 0px #fff;
+  }
+  40% {
+    text-shadow: 0 0 0px #fff;
+  }
+  50% {
+    text-shadow: 0 0 0px #fff;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    text-shadow: 0 0 0px #fff;
+  }
+  80% {
+    text-shadow: 30 30 100px rgba(36, 33, 33, 0.048);
+  }
+  85% {
+    text-shadow: 30 30 100px rgba(36, 33, 33, 0.048);
+  }
+  95% {
+    text-shadow: 30 30 100px rgba(36, 33, 33, 0.048);
+  }
+  100% {
+    text-shadow: 30 30 100px rgba(36, 33, 33, 0.048);
+  }
+}
+
+/*「測定不能」 角度*/
+span.conscious .first {
+  transform: rotate(-40deg);
+}
+span.conscious .second {
+  transform: rotate(70deg);
+}
+span.conscious .third {
+  transform: rotate(-30deg);
+}
+span.conscious .second {
+  transform: rotate(20deg);
+}
+
+/*一文字ずつ遅延させる*/
+span.conscious:nth-child(1) {
+  animation-delay: 0.5s;
+}
+span.conscious:nth-child(2) {
+  animation-delay: 2s;
+}
+span.conscious:nth-child(3) {
+  animation-delay: 1.5s;
+}
+span.conscious:nth-child(4) {
+  animation-delay: 1s;
+}
+span.conscious:nth-child(5) {
+  animation-delay: 3s;
+}
+span.conscious:nth-child(6) {
+  animation-delay: 2.5s;
+}
+span.conscious:nth-child(7) {
+  animation-delay: 4s;
+}
+
+span.conscious:nth-child(8) {
+  animation-delay: 5.5s;
+}
+span.conscious:nth-child(9) {
+  animation-delay: 6.6s;
+}
+span.conscious:nth-child(10) {
+  animation-delay: 7.7s;
+}
+span.conscious:nth-child(11) {
+  animation-delay: 8.8s;
+  color: red;
+}
+span.conscious:nth-child(12) {
+  animation-delay: 9.9s;
+}
+.anim-box.slidein.is-animated {
+  animation: slideIn 6s cubic-bezier(0.12, 0, 0.39, 0) 1 forwards;
+  font-size: 30px;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100px);
+    opacity: 0.9;
+  }
+  10% {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(230px);
+    opacity: 0.5;
+  }
+  65% {
+    transform: translateX(200px);
+  }
+  80% {
+    transform: translate(400px, -100px);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+  5%,
+  100% {
+    opacity: 1;
+  }
+}
+
+mark {
+  margin: 0;
+  font-size: 15px;
+  color: #fff;
+  background-color: #333;
+}
+
+.header-box {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  height: 60px;
+  font-size: 30px;
+}
+
+.header-item {
+  width: 250px;
+  background-color: #000;
+  border-radius: 4px;
+  margin-right: 50px;
+}
+
+.main-wrapper {
+  width: 800px;
+  margin: auto;
+}
+
+.main-wrapper img {
+  border-radius: 80px;
+  width: 100%;
+}
+
+.footer-comment {
+  float: right;
+}
