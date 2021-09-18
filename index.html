@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../../tools/style/reset.css" />
+    <link rel="stylesheet" href="stylesheet.css" />
+    <title>responsive-site</title>
+  </head>
+  <body class="l-body">
+    <div class="l-wrapper">
+      <!--ヘッダー-->
+      <header class="l-header">
+        <div class="p-header">
+          <!--以下header内のハンバーガーメニュー-->
+          <ul class="p-headerHamburger">
+            <li class="p-headerHamburger__top"></li>
+            <li class="p-headerHamburger__middle"></li>
+            <li class="p-headerHamburger__bottom"></li>
+          </ul>
+          <!--以上SPのみ表示する-->
+          <img class="p-header__logo" src="view/TRPG-logo.jpg" alt="会社ロゴ" />
+          <nav class="p-header__nav">
+            <ul class="p-navList">
+              <li><a class="p-navList__link" href="#">ホーム</a></li>
+              <li><a class="p-navList__link" href="scenario.html">シナリオ</a></li>
+              <li><a class="p-navList__link" href="#">探索者</a></li>
+              <li><a class="p-navList__link" href="#">持ち物</a></li>
+            </ul>
+          </nav>
+        </div>
+        <!--ヘッダータイトル-->
+        <h1 class="p-ttl">坂本卓屋 総本山</h1>
+      </header>
+      <!--シナリオ～持ち物-->
+      <main class="l-main">
+        <!--シナリオ-->
+        <section class="p-about">
+          <!-- シナリオ～持ち物共通見出し　-->
+          <div class="c-heading">
+            <h2 class="c-heading__ttl">シナリオ</h2>
+            <p class="c-heading__txt">
+            　最高にホットでエキサイティングなシナリオ
+            </p>
+          </div>
+          <!-- ABOUT固有 写真 * 4枚 -->
+          <ul class="p-aboutList">
+            <li class="p-aboutList__firstBig"></li>
+            <li class="p-aboutList__secondSmall"></li>
+            <li class="p-aboutList__thirdSmall"></li>
+            <li class="p-aboutList__fourthBig"></li>
+          </ul>
+        </section>
+        <!--探索者-->
+        <section class="p-work">
+          <div class="c-heading">
+            <h2 class="c-heading__ttl">探索者</h2>
+            <p class="c-heading__txt">
+            　クトゥルフ怪奇に巻き込まれた一般探索者の我々が<br>
+              生き残る為にダイスに土下座しまくるクッソ愉快な冒険譚
+            </p>
+          </div>
+          <!-- WORK固有 アイコン・タイトル・文章 * 6セット -->
+          <ul class="p-workList">
+            <li>
+              <img class="p-workList__icon" src="icon/detective.png" alt="探偵"/>
+              <h2 class="p-workList__ttl">探偵</h2>
+              <p class="p-workList__txt">
+              　人の知られたくことを根こそぎ掘り返す人
+              </p>
+            </li>
+            <li>
+              <img class="p-workList__icon" src="icon/knight.png" alt="騎士"/>
+              <h2 class="p-workList__ttl">騎士</h2>
+              <p class="p-workList__txt">
+              　両手の武器で殺傷行為を行う人
+              </p>
+            </li>
+            <li>
+              <img class="p-workList__icon" src="icon/police.png" alt="警察"/>
+              <h2 class="p-workList__ttl">警官</h2>
+              <p class="p-workList__txt">
+              　国家権力を傘に正義の鉄槌を下す人
+              </p>
+            </li>
+            <li>
+              <img class="p-workList__icon" src="icon/repoter.png" alt="記者"/>
+              <h2 class="p-workList__ttl">記者</h2>
+              <p class="p-workList__txt">
+　              文〇砲を発射したい人
+              </p>
+            </li>
+            <li>
+              <img class="p-workList__icon" src="icon/rober.png" alt="盗賊"/>
+              <h2 class="p-workList__ttl">盗賊</h2>
+              <p class="p-workList__txt">
+              　盗人。犯罪者。
+              </p>
+            </li>
+            <li>
+              <img class="p-workList__icon" src="icon/writer.png" alt="作家"/>
+              <h2 class="p-workList__ttl">作家</h2>
+              <p class="p-workList__txt">
+              　なんか文章書いてる人
+              </p>
+            </li>
+          </ul>
+        </section>
+        <!--持ち物-->
+        <section class="p-blog">
+          <div class="c-heading">
+            <h2 class="c-heading__ttl">持ち物</h2>
+            <p class="c-heading__txt">
+             　ここで持ち物を用意しよう
+            </p>
+          </div>
+          <!-- Blog固有 写真・文章を横並び * 3セット -->
+          <ul class="p-blogList">
+            <li>
+              <img class="p-blogList__photo" src="item/gun.jpg" alt="銃"/>
+              <div class="p-blogBox">
+                <h1 class="p-blogBox__ttl">
+                  銃
+                </h1>
+                <p class="p-blogBox__txt">
+                　引き金を引いて遊ぼう！
+                </p>
+                <span class="p-blogBox__btn">BAN！</span>
+              </div>
+            </li>
+            <li>
+              <img class="p-blogList__photo" src="item/nukkle.jpg" alt="ナックル"/>
+              <div class="p-blogBox">
+                <h1 class="p-blogBox__ttl">
+                  カイザーナックル
+                </h1>
+                <p class="p-blogBox__txt">
+                　クリーチャーを引っぱたこう！
+                </p>
+                <p><span class="p-blogBox__btn">Don!</span></p>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
