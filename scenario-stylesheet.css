@@ -1,26 +1,129 @@
-#wrapper {
-  width: 1000px;
-  margin: auto;
+/* BLOG  */
+.p-blog {
+  margin-top: 30px;
+  padding: 80px 30px 0 30px;
 }
 
-.header-wrapper {
-  background-image: url(view/scenario.JPG);
-  background-color: rgba(255, 255, 255, 0.89);
-  background-size: cover;
-  width: 100%;
-  height: 700px;
-}
-
-.header-headline {
+/* ABOUT・WORK・BLOG　共通見出し */
+.c-heading {
+  position: relative;
+  padding-bottom: 50px;
   text-align: center;
-  font-size: 20px;
-  font-weight: bold;
+}
+/* 疑似要素設置 */
+.c-heading ::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 260px;
+  height: 4px;
+  transform: translateX(-50%);
+  background-color: #39f50a;
+}
+/* 共通見出し(c-heading)ではなくそれぞれ固有の要素の余白として指定 */
+.p-aboutList,
+.p-workList,
+.p-blogList {
+  margin-top: 60px;
 }
 
-.header-headline p {
-  color: rgba(255, 220, 192, 0.781);
+/* ABOUT・WORK・BLOG > タイトル */
+.c-heading__ttl {
+  color: #585858;
+  font-size: 42px;
 }
 
-.header-document {
+/* ABOUT・WORK・BLOG　> ロレサムテキスト */
+.c-heading__txt {
+  margin-top: 50px;
+  color: #7c7c7c;
   font-size: 24px;
+}
+
+/* Blog */
+/* 2つ目以降の兄弟要素のみ余白指定 */
+.p-blogList li:nth-child(n + 1) {
+  margin-bottom: 80px;
+}
+.p-blogBox__ttl {
+  margin-bottom: 10px;
+  font-size: 26px;
+  color: #585858;
+}
+.p-blogBox__txt {
+  margin-bottom: 60px;
+  font-size: 18px;
+  color: #7c7c7c;
+  line-height: 30px;
+}
+.p-boxSpecial {
+  font-size: 16px;
+  font-weight: bold;
+  color: darkviolet;
+}
+.p-blogBox__txt span {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  /* SP style */
+  /* 共通見出し　テキスト */
+  .c-heading__txt {
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0px;
+  }
+
+  /* Blog */
+  .p-blogList__photo {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .p-blogList li:nth-child(n + 1) {
+    margin-bottom: 40px;
+  }
+  .p-blogBox {
+    text-align: center;
+  }
+
+  .p-blogBox__ttl {
+    display: inline;
+    font-size: 22px;
+  }
+  .p-blogBox__txt {
+    font-size: 14px;
+    line-height: 15px;
+    margin-bottom: 40px;
+  }
+  .p-blogBox__txt li {
+    font-size: 10px;
+  }
+  .p-boxSpecial {
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  /* PC style */
+  /* Blog */
+  .p-blogList li {
+    display: flex;
+    justify-content: space-between;
+    height: 400px;
+  }
+  .p-blogList li:nth-child(2) {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+  .p-blogList__photo {
+    width: 40%;
+  }
+
+  /* box(ttl + txt + btn + special)*/
+  .p-blogBox {
+    margin: 0 20px;
+    width: 51%;
+  }
 }
