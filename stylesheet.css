@@ -1,0 +1,339 @@
+@charset "UTF-8";
+ul{
+  list-style-type: none;
+}
+
+.l-wrapper {
+  background-color: #fff;
+}
+
+/* ヘッダー */
+.l-header {
+  position: relative;
+  background-image: url("view/main-photo.jpg");
+  background-color:rgba(255, 255, 255, 0.185);
+  background-blend-mode:lighten;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* ヘッダータイトル */
+.p-ttl {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 65px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* メイン・margin:header-main間の余白 */
+.l-main {
+  margin-top: 50px;
+  padding-bottom: 40px;
+}
+
+/* ABOUT・WORK・BLOG 余白及び背景色  */
+/* ABOUT  */
+.p-about {
+  padding: 80px 30px 0 30px;
+}
+/* WORK  */
+.p-work {
+  margin-top: 100px;
+  padding: 100px 30px;
+  background-color: #eeeeee;
+}
+/* BLOG  */
+.p-blog {
+  margin-top: 100px;
+  padding: 80px 30px 0 30px;
+}
+
+/* ABOUT・WORK・BLOG　共通見出し */
+.c-heading {
+  position: relative;
+  padding-bottom: 50px;
+  text-align: center;
+}
+/* 疑似要素設置 */
+.c-heading ::after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 130px;
+  height: 4px;
+  transform: translateX(-50%);
+  background-color: #f5c50a;
+}
+/* 共通見出し(c-heading)ではなくそれぞれ固有の要素の余白として指定 */
+.p-aboutList,
+.p-workList,
+.p-blogList {
+  margin-top: 60px;
+}
+
+/* ABOUT・WORK・BLOG > タイトル */
+.c-heading__ttl {
+  color: #585858;
+  font-size: 42px;
+}
+
+/* ABOUT・WORK・BLOG　> ロレサムテキスト */
+.c-heading__txt {
+  margin-top: 50px;
+  color: #7c7c7c;
+  font-size: 24px;
+}
+
+/* ABOUT > 写真4枚 */
+.p-aboutList li {
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+.p-aboutList__firstBig {
+  background-image: url("view/firstBig.jpg");
+}
+.p-aboutList__secondSmall {
+  background-image: url("view/secondSmall.jpg");
+}
+.p-aboutList__thirdSmall {
+  background-image: url("view/thirdSmall.jpg");
+}
+.p-aboutList__fourthBig {
+  background-image: url("view/fourthBig.jpg");
+}
+
+/* WORK */
+.p-workList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 60px;
+}
+
+/* li(icon + ttl + txt) */
+.p-workList li {
+  width: 360px;
+  height: 300px;
+  text-align: center;
+}
+.p-workList__icon {
+  width: 70px;
+  height: 70px;
+}
+.p-workList__ttl {
+  margin-top: 30px;
+  color: #585858;
+  font-size: 26px;
+}
+/* width・margin:テキストレイアウトと中央寄せの為 */
+.p-workList__txt {
+  margin-top: 30px;
+  color: #7c7c7c;
+  font-size: 20px;
+  letter-spacing: 1px;
+  line-height: 24px;
+}
+
+/* Blog */
+/* 2つ目以降の兄弟要素のみ余白指定 */
+.p-blogList li:nth-child(n + 1) {
+  margin-bottom: 80px;
+}
+.p-blogBox__ttl {
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: #585858;
+}
+.p-blogBox__txt {
+  margin-bottom: 60px;
+  font-size: 18px;
+  color: #7c7c7c;
+  line-height: 30px;
+}
+.p-blogBox__btn {
+  display: inline-block;
+  border-radius: 10px;
+  color: #fff;
+  width: 130px;
+  height: 70px;
+  line-height: 70px;
+  font-size: 22px;
+  text-align: center;
+  background-color: #f5c50a;
+}
+
+@media screen and (max-width: 768px) {
+  /* SP style */
+  /* header >　以下ハンバーガーメニュー */
+  .p-headerHamburger {
+    position: relative;
+    height: 100px;
+  }
+  .p-headerHamburger li {
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    right: 15px;
+  }
+  .p-headerHamburger__top {
+    top: 20px;
+  }
+  .p-headerHamburger__middle {
+    top: 30px;
+  }
+  .p-headerHamburger__bottom {
+    top: 40px;
+  }
+  /* 以上ハンバーガーメニュー */
+
+  .p-header__logo {
+    display: none;
+  }
+  .p-header__nav {
+    display: none;
+  }
+  .p-ttl {
+    font-size: 36px;
+  }
+
+  /* 共通見出し　テキスト */
+  .c-heading__txt {
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 0px;
+  }
+
+  /* ABOUT */
+  .p-aboutList li {
+    height: 190px;
+  }
+  .p-aboutList li:nth-child(n + 2) {
+    margin-top: 30px;
+  }
+
+  /* WORK */
+  .p-workList li {
+    margin-left: 0px;
+  }
+  .p-workList__txt {
+    width: 330px;
+    font-size: 14px;
+  }
+
+  /* Blog */
+  .p-blogList__photo {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  .p-blogList li:nth-child(n + 1) {
+    margin-bottom: 40px;
+  }
+  .p-blogBox__ttl {
+    font-size: 22px;
+  }
+  .p-blogBox__txt {
+    font-size: 14px;
+    line-height: 15px;
+    margin-bottom: 40px;
+  }
+  .p-blogBox__btn {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  /* PC style */
+  /* header */
+  .p-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 90px;
+  }
+  .p-header__logo {
+    width: 60px;
+    border:1px solid;
+  }
+  .p-navList {
+    display: flex;
+  }
+  .p-navList li:not(:first-child) {
+    margin-left: 40px;
+  }
+  .p-navList__link {
+    color: #fff;
+    font-size: 18px;
+    text-decoration: none;
+  }
+
+  /*　header > ハンバーガーメニュー非表示 */
+  .p-headerHamburger {
+    display: none;
+  }
+
+  /*　ABOUT */
+  .p-aboutList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .p-aboutList li {
+    height: 370px;
+  }
+  .p-aboutList li:nth-child(n + 3) {
+    margin-top: 30px;
+  }
+  .p-aboutList__firstBig,
+  .p-aboutList__fourthBig {
+    width: 60%;
+  }
+  .p-aboutList__secondSmall,
+  .p-aboutList__thirdSmall {
+    width: 33%;
+  }
+  
+  /*　WORK */
+  .p-workList li {
+    margin-left: 15px;
+  }
+  .p-workList li:nth-child(1) {
+    margin-left: 0px;
+  }
+  .p-workList li:nth-child(4) {
+    margin-left: 0px;
+  }
+
+  /* Blog */
+  .p-blogList li {
+    display: flex;
+    justify-content: center;
+    height: 300px;
+  }
+  .p-blogList li:nth-child(2) {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+  .p-blogList__photo {
+    width: 40%;
+  }
+
+  /* box(ttl + txt + btn)*/
+  .p-blogBox {
+    margin: 0 20px;
+    width: 51%;
+  }
+}
