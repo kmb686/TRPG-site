@@ -1,5 +1,5 @@
 @charset "UTF-8";
-ul{
+ul {
   list-style-type: none;
 }
 
@@ -7,14 +7,61 @@ ul{
   background-color: #fff;
 }
 
+#open,
+#close {
+  cursor: pointer;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
+  padding: 12px 0;
+  margin: 16px auto 0;
+}
+
+#mask {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modal {
+  background: #fff;
+  width: 300px;
+  padding: 20px;
+  border-radius: 4px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: transform 0.4s;
+  z-index: 2;
+}
+
+#modal > p {
+  margin: 0 0 20px;
+}
+
+#mask.hidden {
+  display: none;
+}
+
+#modal.hidden {
+  transform: translate(0, -500px);
+}
+
 /* ヘッダー */
 .l-header {
   position: relative;
   background-image: url("view/main-photo.jpg");
-  background-color:rgba(255, 255, 255, 0.185);
-  background-blend-mode:lighten;
+  background-color: rgba(255, 255, 255, 0.185);
+  background-blend-mode: lighten;
   background-size: cover;
-  height: 100vh;
+  height: 80vh;
 }
 
 /* ヘッダータイトル */
@@ -25,7 +72,7 @@ ul{
   width: 100%;
   color: rgba(255, 255, 255, 0.76);
   font-size: 65px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   letter-spacing: 2px;
   text-align: center;
 }
@@ -174,26 +221,100 @@ ul{
 @media screen and (max-width: 768px) {
   /* SP style */
   /* header >　以下ハンバーガーメニュー */
-  .p-headerHamburger {
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background: #fff;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  /*------------------------------
+  
+    ここから下がハンバーガーメニュー
+    に関するCSS
+  
+  ------------------------------*/
+
+  /* チェックボックスは非表示に */
+  .drawer-hidden {
+    display: none;
+  }
+
+  /* ハンバーガーアイコンの設置スペース */
+  .drawer-open {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    height: 100px;
+    z-index: 100; /* 重なり順を一番上に */
+    cursor: pointer;
   }
-  .p-headerHamburger li {
-    width: 30px;
-    height: 2px;
-    background-color: #fff;
+
+  /* ハンバーガーメニューのアイコン */
+  .drawer-open span,
+  .drawer-open span:before,
+  .drawer-open span:after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background: #333;
+    transition: 0.5s;
     position: absolute;
-    right: 15px;
   }
-  .p-headerHamburger__top {
-    top: 20px;
+
+  /* 三本線のうち一番上の棒の位置調整 */
+  .drawer-open span:before {
+    bottom: 8px;
   }
-  .p-headerHamburger__middle {
-    top: 30px;
+
+  /* 三本線のうち一番下の棒の位置調整 */
+  .drawer-open span:after {
+    top: 8px;
   }
-  .p-headerHamburger__bottom {
-    top: 40px;
+
+  /* アイコンがクリックされたら真ん中の線を透明にする */
+  #drawer-check:checked ~ .drawer-open span {
+    background: rgba(255, 255, 255, 0);
   }
+
+  /* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+  #drawer-check:checked ~ .drawer-open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+
+  #drawer-check:checked ~ .drawer-open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* メニューのデザイン*/
+  .drawer-content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%; /* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background: #fff;
+    transition: 0.5s;
+  }
+
+  /* アイコンがクリックされたらメニューを表示 */
+  #drawer-check:checked ~ .drawer-content {
+    left: 0; /* メニューを画面に入れる */
+  }
+
   /* 以上ハンバーガーメニュー */
 
   .p-header__logo {
@@ -255,6 +376,11 @@ ul{
 
 @media screen and (min-width: 769px) {
   /* PC style */
+
+  .drawer {
+    display: none;
+  }
+
   /* header */
   .p-header {
     display: flex;
@@ -265,7 +391,7 @@ ul{
   }
   .p-header__logo {
     width: 60px;
-    border:1px solid;
+    border: 1px solid;
   }
   .p-navList {
     display: flex;
@@ -277,11 +403,6 @@ ul{
     color: #fff;
     font-size: 18px;
     text-decoration: none;
-  }
-
-  /*　header > ハンバーガーメニュー非表示 */
-  .p-headerHamburger {
-    display: none;
   }
 
   /*　ABOUT */
@@ -305,7 +426,7 @@ ul{
   .p-aboutList__thirdSmall {
     width: 33%;
   }
-  
+
   /*　WORK */
   .p-workList li {
     margin-left: 15px;

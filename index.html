@@ -14,29 +14,41 @@
       <header class="l-header">
         <div class="p-header">
           <!--以下header内のハンバーガーメニュー-->
-          <ul class="p-headerHamburger">
-            <li class="p-headerHamburger__top"></li>
-            <li class="p-headerHamburger__middle"></li>
-            <li class="p-headerHamburger__bottom"></li>
-          </ul>
+          <!-- ハンバーガーメニュー部分 -->
+          <div class="drawer">
+            <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+            <input type="checkbox" id="drawer-check" class="drawer-hidden" />
+            <!-- ハンバーガーアイコン -->
+            <label for="drawer-check" class="drawer-open"><span></span></label>
+            <!-- メニュー -->
+            <nav class="drawer-content">
+              <ul class="drawer-list">
+                <li class="drawer-item">
+                  <a href="scenario.html">シナリオ</a>
+                </li>
+                <!-- /.drawer-item -->
+                <li class="drawer-item">
+                  <a href="explore.html">探索者</a>
+                </li>
+                <!-- /.drawer-item -->
+                <li class="drawer-item">
+                  <a href="convenience.html">お役立ち</a>
+                </li>
+                <!-- /.drawer-item -->
+              </ul>
+              <!-- /.drawer-list -->
+            </nav>
+          </div>
           <!--以上SPのみ表示する-->
           <img class="p-header__logo" src="view/TRPG-logo.jpg" alt="会社ロゴ" />
           <nav class="p-header__nav">
             <ul class="p-navList">
               <li>
-                <a class="p-navList__link" target="blank" href="scenario.html"
-                  >シナリオ</a
-                >
+                <a class="p-navList__link" href="scenario.html">シナリオ</a>
               </li>
-              <li><a class="p-navList__link" href="#">探索者</a></li>
-              <li><a class="p-navList__link" href="#">持ち物</a></li>
+              <li><a class="p-navList__link" href="explore.html">探索者</a></li>
               <li>
-                <a
-                  class="p-navList__link"
-                  target="blank"
-                  href="convenience.html"
-                  >お役立ち</a
-                >
+                <a class="p-navList__link" href="convenience.html">お役立ち</a>
               </li>
             </ul>
           </nav>
@@ -44,6 +56,13 @@
         <!--ヘッダータイトル-->
         <h1 class="p-ttl">坂本卓屋 総本山</h1>
       </header>
+      <section id="modal" class="hidden">
+        <p><span>9月25日　イゴーロナク・ゲーム</span></p>
+        <p><span>10月〇日　参加者募集中！</span></p>
+        <div id="close">閉じる</div>
+      </section>
+      <div id="open">お知らせ・履歴</div>
+      <div id="mask" class="hidden"></div>
       <!--シナリオ～持ち物-->
       <main class="l-main">
         <!--シナリオ-->
@@ -144,5 +163,6 @@
         </section>
       </main>
     </div>
+    <script src="js/main.js"></script>
   </body>
 </html>
